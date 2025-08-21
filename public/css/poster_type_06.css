@@ -1,0 +1,31 @@
+.poster_06{
+    text-align: left;
+    height: auto;
+    width: 100%;
+    padding: 60px 0;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: black;
+    background-color: white;
+}
+
+.poster_06_text_wrap{
+    word-break: break-all;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+
+.poster_06_text_wrap h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+.poster_06_content{
+    text-align: left;
+    font-size: 15px;
+    margin: 0;
+}

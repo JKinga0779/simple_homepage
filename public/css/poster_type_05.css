@@ -1,0 +1,48 @@
+.poster_05{
+    color: black;
+    background-color: white;
+}
+
+.poster_05_text{
+    height: auto;
+    width: 100%;
+    max-width: 1600px;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    padding: 20px;
+    font-size: 4vw;
+    word-break: break-all;
+}
+
+.poster_05 a:link{
+    text-decoration: none;
+}
+
+.poster_05_media{
+    width: 100%;
+}
+
+.poster_05_media p{
+    font-size: 1.1vw;
+    text-decoration: none;    
+    color: black;    
+    right: 0;
+    position: absolute;
+}
+
+.poster_05_media img{
+    width:100%;
+    height:auto;
+    object-fit: fill;
+    display: block;
+    border:0;
+}
+
+.poster_05_media video{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    display: block;
+}

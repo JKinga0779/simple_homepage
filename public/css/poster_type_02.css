@@ -1,0 +1,162 @@
+.poster_02{
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    padding: 50px 0;
+    color: black;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.poster_02_text_wrap{
+    text-align: center;
+    word-break: break-all;
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+
+.poster_02_text_wrap h2{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.poster_02_content{
+    font-size: 20px;
+    margin: 0;
+}
+
+.poster_02_items_wrap{
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.poster_02_items_wrap p{
+    padding-top: 10px;
+    font-size: 11px;
+    text-align: right;
+}
+
+.poster_02_media2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 56.25%;
+}
+
+.poster_02_media1{
+    width: 100%;
+    height: auto;
+}
+
+.poster_02_media1 img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.poster_02_media2 iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.poster_02_media2 video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.poster_02_btn_wrap_1{
+    text-align: center;
+    height: auto;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.poster_02_btn_wrap_1 a{
+    width: auto;
+    vertical-align: middle;
+    height: auto;
+    margin: 10px 10px;
+    font-size: 20px;
+    border:0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0 rgba(53, 53, 53, 0.308);
+}
+
+.poster_02_btn_wrap_1 a:hover{
+    opacity: 0.8;
+}
+
+
+.poster_02_btn_wrap_2{
+    text-align: center;
+    height: auto;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.poster_02_btn_wrap_2 a{
+    width: auto;
+    vertical-align: middle;
+    height: auto;
+    margin: 10px 10px;
+    font-size: 20px;
+    border:0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0 rgba(53, 53, 53, 0.308);
+}
+
+.poster_02_btn_wrap_2 a:hover{
+    opacity: 0.8;
+}
+
+@media screen and (min-width:1301px) { /*大視窗*/
+    .poster_02_all_wrap_text_left{
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 50px;
+        flex-direction: row-reverse;
+    }
+    .poster_02_all_wrap_text_right{
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+    .poster_02_all_wrap_text_top{
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width:1300px) { /*小視窗*/
+}
+
+@media screen and (max-width:340px) {
+    .poster_02_items_wrap{
+        display: none;
+    }
+}

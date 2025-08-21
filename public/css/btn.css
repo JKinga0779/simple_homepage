@@ -1,0 +1,231 @@
+.box_btn_wrap{
+    height: 100%;
+    width: 100%; 
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.box_btn_wrap_r_l{
+    height: 100%;
+    width: 100%; 
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.box_btn_wrap_t_b{
+    height: 100%;
+    width: 100%; 
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.box_btn{
+    height: 100%;
+    width: 100%; 
+    border-width: 0;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    display: grid;
+    margin: auto;
+}
+
+.r_t{    
+    border-top-right-radius: 10px;
+}
+
+.r_b{
+    border-bottom-right-radius: 10px;
+}
+
+.l_t{
+    border-top-left-radius: 10px;
+}
+
+.l_b{
+    border-bottom-left-radius: 10px;
+}
+
+.b_b{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.t_t{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.l_l{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.r_r{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.t_b_r_l{    
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 0 rgba(53, 53, 53, 0.308);
+}
+
+.color_g:hover{
+    background-color: rgb(170, 201, 134);
+}
+.color_r:hover{
+    background-color: rgb(229, 130, 130);
+}
+
+.color_y:hover{
+    background-color: rgb(229, 219, 130);
+}
+
+.color_w:hover{
+    background-color: rgb(224, 224, 224);
+}
+
+.btn_edit{
+    border-top-right-radius: 10px;
+}
+
+.btn_edit:hover{
+    background-color: rgb(170, 201, 134);
+}
+
+.btn_del{
+    border-bottom-right-radius: 10px;
+}
+
+.btn_del:hover{
+    background-color: rgb(229, 130, 130);
+}
+
+.btn_herf{
+    height: 50px;
+    width: 100%; 
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    align-items: center;    
+    color: black;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 1px 1px 2px 0 rgba(53, 53, 53, 0.308);
+    display: grid;
+}
+
+.btn_herf:hover{
+    background-color: rgb(130, 176, 229);
+}
+
+.btn_herf_wrap a{
+    font-style: none;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn_pages a:hover{
+    color: #fff;
+    padding: auto;
+}
+
+.btn_pages_wrap{
+    padding: 0px !important;
+}
+.btn_pages_col{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.btn_back{
+    background-color: rgb(141, 141, 141);        
+    border-radius: 10px;    
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px auto;
+    display: grid;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.btn_back:hover{
+    background-color: rgb(185, 185, 185);
+}
+
+.btn_back a{
+    color: #ffffff;
+}
+.btn_back a:hover{
+    color: rgb(122, 122, 122);
+}
+
+.btn_news_type_wrap{ 
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn_news_type{           
+    border-radius: 10px;    
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    width: 110px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px auto;
+    display: grid;
+    font-weight: bold;
+    transition: 0.5s;
+    background-color: white;   
+    box-shadow: 2px 2px 2px 0 rgba(53, 53, 53, 0.308);
+}
+
+.btn_news_type:hover{
+    background-color: rgb(233, 233, 233);   
+
+}
+
+@media screen and (min-width:401px) { /*大視窗*/
+    .btn_herf_wrap{
+        height: auto;
+        width: 100%; 
+        text-align: center;
+        vertical-align: middle;
+        align-items: center;
+        display: flex;
+    }
+}
+
+@media screen and (max-width:400px) { /*小視窗*/
+    .btn_herf_wrap{
+        height: auto;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        align-items: center;
+        display: grid;
+    }
+}
+
+@media screen and (max-width:340px) {
+    
+}

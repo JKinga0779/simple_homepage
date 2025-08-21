@@ -1,0 +1,21 @@
+.nav_dd_menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.dropdown:hover{
+    .dropdown-menu{
+        top: 40px;
+        display: grid;
+    }
+}
+.nav_dd_title{
+    font-size: 18px;
+    font-weight: bold;    
+}
+.nav_dd_text{
+    font-size: 16px;
+
+}
+.dropdown-item:hover{
+    background-color: rgb(121, 121, 121);
+}
