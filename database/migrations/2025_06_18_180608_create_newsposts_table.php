@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('type')->default('1');  //0.其他 1.一般公告 2.季節促銷 3.產品新聞
             $table->integer('status')->default('1'); //1.啟用 2.刪除
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

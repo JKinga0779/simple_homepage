@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('status');
             $table->rememberToken();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('createds_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
