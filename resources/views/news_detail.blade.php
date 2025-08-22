@@ -35,7 +35,7 @@
         
        </div>    
        <div class="content_news_date">         
-            <p>發布日期： {{$newspost['create_at']}}</p>
+            <p>發布日期： {{$newspost['created_at']}}</p>
             <p>最後編輯時間： {{$newspost['updated_at']}}</p>
        </div>
     </section>

@@ -29,8 +29,8 @@
                                 <input name="{{'id_' . $newspost['id']}}" type="text" class="form-control-plaintext" id="{{'id_' . $newspost['id']}}" value="{{$newspost['id']}}" readonly>
                             </div>
                             <div class="text_input_box">
-                                <label for="{{'create_date_' . $newspost['id']}}">新增日期</label>
-                                <input name="{{'create_date_' . $newspost['id']}}" type="text" class="form-control-plaintext" id="{{'create_date_' . $newspost['id']}}" value="{{$newspost['create_at']}}" readonly>
+                                <label for="{{'created_date_' . $newspost['id']}}">新增日期</label>
+                                <input name="{{'created_date_' . $newspost['id']}}" type="text" class="form-control-plaintext" id="{{'created_date_' . $newspost['id']}}" value="{{$newspost['created_at']}}" readonly>
                             </div>
                             <div class="text_input_box">
                                 <label for="{{'updated_at_' . $newspost['id']}}">修改日期</label>

@@ -236,6 +236,7 @@ footer{
 
 .content_companyinfo{
     height: auto;
+    min-height: 300px;
     width: 100%;
     padding: 60px 100px;
     text-align: center;

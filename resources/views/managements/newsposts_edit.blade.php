@@ -17,8 +17,8 @@
                 <input name="id" type="text" class="form-control-plaintext" id="id" value="{{$newspost['id']}}" readonly/>
             </div>
             <div class="text_input_box">
-                <label for="create_at">新增日期</label>
-                <input name="create_at" type="text" class="form-control-plaintext" id="create_at" value="{{$newspost['create_at']}}" readonly/>
+                <label for="created_at">新增日期</label>
+                <input name="created_at" type="text" class="form-control-plaintext" id="created_at" value="{{$newspost['created_at']}}" readonly/>
             </div>
             <div class="text_input_box">
                 <label for="updated_at">修改日期</label>
@@ -38,8 +38,8 @@
                 </select>                            
             </div>
             <div class="text_input_box">
-                <label for="editor">內容</label>
-                <textarea id="editor" name='editor' class="form-control" rows="20">{{$newspost['content']}}</textarea>
+                <label for="content">內容</label>
+                <textarea id="content" name='content' class="form-control" rows="20">{{$newspost['content']}}</textarea>
             </div>
 
         </div>

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('homeposts', function (Blueprint $table) {
             
+            $table->string('circle_text_color')->default('#FFFFFF')->after('circle_color');
             $table->integer('card_background_type')->default('1')->after('btn_herf_6'); //1.卡片顏色 2.圖片(上傳) 3.商品個別設定
             $table->string('card_background_color')->default('#FFFFFF')->after('card_background_img');
             $table->string('card_text_color')->default('#000000')->after('card_background_color');
@@ -30,7 +31,7 @@ return new class extends Migration
     {
         Schema::table('homeposts', function (Blueprint $table) {
 
-            $table->dropColumn('background_herf');
+            $table->dropColumn('circle_text_color');
             $table->dropColumn('card_background_type');
             $table->dropColumn('card_background_color');
             $table->dropColumn('card_text_color');

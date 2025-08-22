@@ -4,7 +4,7 @@
 <div style="{{'background-color:' . $companyinfo['site_background_color']}}">
     <div class="main_header">
         <div class="main_title">
-            <h1>所有商品</h1>
+            <h1>商品總覽</h1>
         </div>
         @if($header_images_count>0)    
         <div id="carousel_header" class="carousel slide carousel-fade" data-bs-ride="carousel" style="z-index:1;">
@@ -56,17 +56,31 @@
                         <p class="product_tag">{{$product['type_name']}}</p>
                     </div>
                     <div class="product_price">                        
-                        <p>
-                            <sup>$</sup>
-                            {{$product['retail_price']}}
-                        </p>
+                        @if($product['special_price']!=0)
+                            <div class="product_detail_price_sp" style="color: red;">
+                                <sup>$</sup>
+                                {{$product['special_price']}}
+                                <sup style="color: red;">特價</sup>
+                            </div>
+                        @elseif(($product['discount']!=0)&&($product['discount']!=100))   
+                            <div class="product_detail_price_dc" style="color: green;">
+                                <sup>$</sup>
+                                {{$product['retail_price']*$product['discount']/100}}
+                                <sup style="color: green;">{{$product['discount']/10}}折</sup>
+                            </div>
+                        @else
+                            <div class="product_detail_price" style="color: black;">
+                                <sup>$</sup>
+                                {{$product['retail_price']}}                                                
+                            </div>
+                        @endif
                     </div>                    
                 </div>
             </a>
             @endforeach
             @else
             <p></p>
-            <div class="no_date">
+            <div class="no_date" style="min-height: 300px;">
                 <h1>無商品資料</h1>
             </div>
             <p></p>

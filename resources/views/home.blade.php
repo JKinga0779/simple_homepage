@@ -81,7 +81,7 @@
                                 <div class="circle rounded-circle" style="{{'background-color:' . $homepost['circle_color']}}">           
                                     <div class="poster_01_img_wrap" >        
                                         <img src="{{'/storage/' . $homepost['s_img_' . $i]}}" alt="...">
-                                        <p>{{$homepost['s_img_title_' . $i]}}</p>
+                                        <p style="{{'color:' . $homepost['circle_text_color']}}">{{$homepost['s_img_title_' . $i]}}</p>
                                     </div>
                                 </div>
                             </div>  

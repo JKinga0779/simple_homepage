@@ -72,7 +72,7 @@ class Controller extends BaseController
                     $products_count = count($products);
                     $products_count_de = (int) ($products_count/3);
                     $products_count_re = (int) ($products_count%3);
-                }elseif($homepost['card_type']==2){
+                }else if($homepost['card_type']==2){
                     $post_ids=[];
                     for($i=1 ; $i<=10 ; $i++){
                         $temp = 'product_id_'.str_pad($i,2,'0',STR_PAD_LEFT);
@@ -172,150 +172,7 @@ class Controller extends BaseController
         }
         return view('home',compact('announcement_posts','announcements_count','homeposts'));
     }
-
-    public function home()
-    {
-        $announcement_posts = Announcement::select('announcements.*')
-                                            ->where('status',1)
-                                            ->orderby('show_order','ASC')                                         
-                                            ->get();
-        foreach($announcement_posts AS $announcement_post){
-            if(!Empty($announcement_post['image'])){
-                $announcement_img = "/storage/" . $announcement_post['image'];
-            }else{
-                $announcement_img = "/default_image/homecarousel_default00.png";  
-            }
-            $announcement_post['image'] = $announcement_img;
-        }
-        if(empty($announcement_posts)){
-            $announcements_count = 0;            
-        }else{
-            $announcements_count = count($announcement_posts);
-        }
-
-        $homeposts = Homepost::select('homeposts.*')
-                                ->where('status',1)
-                                ->orderby('post_order','DESC')                                         
-                                ->get();
-        foreach($homeposts AS $homepost){
-            if($homepost['post_type']==4){
-                if($homepost['product_DESC_ASC']==1){
-                    $orderby = 'DESC';
-                }else{
-                    $orderby = 'ASC';
-                }
-
-                if($homepost['card_type']==1){
-                    $products = Product::select('products.*')
-                                        ->take($homepost['product_range'])
-                                        ->where('status',1)
-                                        ->orderby($homepost['product_orderby'],$orderby)                                         
-                                        ->get();
-                    $products_count = count($products);
-                    $products_count_de = (int) ($products_count/3);
-                    $products_count_re = (int) ($products_count%3);
-                }else if($homepost['card_type']==2){
-                    $post_ids=[];
-                    for($i=1 ; $i<=10 ; $i++){
-                        $temp = 'product_id_'.str_pad($i,2,'0',STR_PAD_LEFT);
-                        if($homepost[$temp]!=0){
-                            
-                            $post_ids[] = $homepost[$temp];
-                        }                        
-                    }                             
-                    $products = Product::select('products.*')
-                                        ->where('status',1)
-                                        ->whereIn('id', $post_ids)
-                                        ->orderby($homepost['product_orderby'],$orderby)                                         
-                                        ->get();    
-                    
-                    $products_count = count($products);
-                    $products_count_de = (int) ($products_count/3);
-                    $products_count_re = (int) ($products_count%3);
-                }
-
-                $homepost['show_products'] = $products;
-                $homepost['show_products_count'] = $products_count;
-                $homepost['show_products_count_de'] = $products_count_de;
-                $homepost['show_products_count_re'] = $products_count_re; 
-                                  
-                switch($homepost['card_background_type']){  //1.卡片顏色 2.圖片(上傳) 3.商品個別設定
-                    case 1:
-                        $card_bg_img = "/default_image/card_default00.png";
-                        break;
-                    case 2:
-                        if(!Empty($homepost['card_background_img'])){
-                            $card_bg_img = "/storage/" . $homepost['card_background_img'];
-                        }else{
-                            $card_bg_img = "/default_image/card_default00.png";  
-                        }
-                        break;
-                    case 3:
-                        if(!Empty($homepost['card_background_img'])){
-                            $card_bg_img = "/storage/" . $homepost['card_background_img'];
-                        }else{
-                            $card_bg_img = "/default_image/card_default00.png";  
-                        }
-                        break;
-                    default:
-                        $card_bg_img = "/default_image/card_default00.png";
-                        break;
-                }
-                $homepost['card_bg_img'] = $card_bg_img;               
-            }
-
-            //background setting
-            switch($homepost['background_type']){  //1.color 2.img 3.video
-                case 0:
-                    $bg_style = "";  
-                    break;
-                case 1:
-                    $bg_style = "background-color:". $homepost['background_color'] . ";" 
-                              . "color:" . $homepost['text_color'] . ";";
-                    break;
-                case 2:
-                    if($homepost['background_img']!=null){
-                        $bg_style = "background-image: url('/storage/" . $homepost['background_img'] . "');" 
-                                  . "color:" . $homepost['text_color'] . ";";
-                    }else{
-                        $bg_style = "background-color:". $homepost['background_color'] . ";" 
-                                  . "color:" . $homepost['text_color'] . ";";
-                    }
-                    break;
-                case 3:
-                    $bg_style = "color:" . $homepost['text_color'] . ";";
-                    break;
-                default:
-                    $bg_style = "";
-                    break;
-            }
-            $homepost['bg_style'] = $bg_style;
-            $homepost['card_style'] = "background-color:". $homepost['card_background_color'] . ";" ;
-            $homepost['btn_style'] = "background-color: ". $homepost['btn_bg_color']
-                                  . ";color: ". $homepost['btn_text_color'] . ";";
-
-            //text align
-            switch($homepost['text_align']){  //0.none 1.top 2.left 3.right
-                case 0:
-                    $homepost['text_align_class'] = "";  
-                    break;
-                case 1:
-                    $homepost['text_align_class'] = "_all_wrap_text_top";  
-                    break;
-                case 2:
-                    $homepost['text_align_class'] = "_all_wrap_text_left";  
-                    break;
-                case 3:
-                    $homepost['text_align_class'] = "_all_wrap_text_right";  
-                    break;
-                default:
-                  $homepost['text_align_class'] = "";
-            }
-        }
-
-        return view('home',compact('announcement_posts','announcements_count','homeposts','card_bg_img'));
-    }
-
+    
     public function companyinfo()
     {
         return view('companyinfo');
@@ -353,8 +210,8 @@ class Controller extends BaseController
         $now_newsposts =$newsposts->slice(0,10);
 
         foreach($now_newsposts as $now_newspost){
-            $create_date = substr($now_newspost['create_at'],0,10);
-            $now_newspost['create_date'] = $create_date;
+            $created_date = substr($now_newspost['created_at'],0,10);
+            $now_newspost['created_date'] = $created_date;
         }
 
         $type='all';
@@ -418,8 +275,8 @@ class Controller extends BaseController
         }
 
         foreach($now_newsposts as $now_newspost){
-            $create_date = substr($now_newspost['create_at'],0,10);
-            $now_newspost['create_date'] = $create_date;
+            $created_date = substr($now_newspost['created_at'],0,10);
+            $now_newspost['created_date'] = $created_date;
         }
         
         return view('news',compact('now_newsposts','newsposts_count','pagesinfo','type'));
@@ -504,33 +361,6 @@ class Controller extends BaseController
         return view('product_detail',compact('product'));
     }
 
-    // public function productinfodetail($id)
-    // {
-    //     $product = Product::select('products.*','products_types.name as type_name')
-    //                         ->where('products.id',1)
-    //                         ->where('products.status',1)
-    //                         ->leftjoin('products_types', 'products_types.id', '=', 'products.type_id')
-    //                         ->orderby('products.id','ASC')                                        
-    //                         ->get(); 
-    //     return view('productinfodetail');
-    // }
-
-
-    public function support()
-    {
-        return view('support');
-    }
-
-
-    public function productinfo()
-    {
-        return view('productinfo');
-    }
-
-    public function onlineshop()
-    {
-        return view('onlineshop');
-    }
 
 }
 

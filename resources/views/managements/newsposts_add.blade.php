@@ -5,7 +5,7 @@
     function addBtnEnable() {  
         const btn_add = document.getElementById('btn_add');
         if((document.getElementById("title").value.trim().length !== 0) &&
-           (document.getElementById("editor").value.trim().length !== 0)){
+           (document.getElementById("content").value.trim().length !== 0)){
             btn_add.removeAttribute('disabled');
             btn_add.setAttribute("class","box_btn b_b color_g") 
         }else{
@@ -15,7 +15,7 @@
     }
 </script>
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js">
-    CKEDITOR.replace('editor');
+    CKEDITOR.replace('content');
 </script>
 
 <div class="display_show">    
@@ -38,8 +38,8 @@
                 </select>                            
             </div>
             <div class="text_input_box">
-                <label for="editor">內容</label>
-                <textarea id="editor" name='editor' class="form-control" rows="20" value="" oninput="addBtnEnable()"></textarea>
+                <label for="content">內容</label>
+                <textarea id="content" name='content' class="form-control" rows="20" value="" oninput="addBtnEnable()"></textarea>
             </div>
         </div>
         

@@ -41,9 +41,8 @@
                                     <option value=6>6.標題+敘述</option>
                                 </select>                            
                             </div>
-                        </div>
- 
-
+                        </div> 
+                        
                         <div class="box_btn_wrap_r_l">
                             <form method='GET' action="{{ route('homeposts_edit', ['id' => $homepost['id']] ) }}" class="box_btn">
                                 @csrf

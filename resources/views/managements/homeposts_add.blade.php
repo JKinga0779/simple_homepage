@@ -279,7 +279,9 @@
                             <label  class="management_title" for="text_color">文字顏色</label>
                             <input type="color" id="text_color" name="text_color" value="#000000" style="vertical-align: middle;"/>               
                             <label  class="management_title" for="circle_color">圓圈顏色</label>
-                            <input type="color" id="circle_color" name="circle_color" value="#E3E3E3" style="vertical-align: middle;"/>    
+                            <input type="color" id="circle_color" name="circle_color" value="#E3E3E3" style="vertical-align: middle;"/>                      
+                            <label  class="management_title" for="circle_text_color">圓圈文字顏色</label>
+                            <input type="color" id="circle_text_color" name="circle_text_color" value="#FFFFFF" style="vertical-align: middle;"/>   
                             <label  class="management_title" for="btn_bg_color">按鈕顏色</label>
                             <input type="color" id="btn_bg_color" name="btn_bg_color" value="#000000" style="vertical-align: middle;"/>     
                             <label  class="management_title" for="btn_text_color">按鈕文字顏色</label>
@@ -778,7 +780,7 @@
                                     <option value="stores_num">庫存量</option>         
                                     <option value="sales_num">銷售量</option>   
                                     <option value="discount">折扣率</option>     
-                                    <option value="create_at">創建時間</option>  
+                                    <option value="created_at">創建時間</option>  
                                 </select>                            
                             </div>
                             <div class="text_input_box">

@@ -73,7 +73,7 @@
                     <br>
                     <br>                    
                     <div class="product_detail_date">         
-                        <p>發布時間： {{$product['create_at']}}</p>
+                        <p>發布時間： {{$product['created_at']}}</p>
                         <p>編輯時間： {{$product['updated_at']}}</p>
                     </div>
                 </div>                

@@ -24,8 +24,8 @@ Route::fallback(function () {
     return response()->view('error.400',[],400);
 });
 
-Route::get('/', [App\Http\Controllers\Controller::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\Controller::class, 'home'])->name('home');
+Route::get('/', [App\Http\Controllers\Controller::class, 'index'])->name('index');
+Route::get('/home', [App\Http\Controllers\Controller::class, 'index'])->name('index');
 Route::get('/companyinfo', [App\Http\Controllers\Controller::class, 'companyinfo'])->name('companyinfo');
 Route::get('/news', [App\Http\Controllers\Controller::class, 'news'])->name('news');
 Route::get('/news/{type}/page/{now_page}', [App\Http\Controllers\Controller::class, 'news_page'])->name('news_page');

@@ -3,17 +3,21 @@
 @section('content2')
 <script> 
     function MoveUp(item) {
+        const btn_update = document.getElementById('btn_update');
         const itemID = document.getElementById(item);
         const prevID = itemID.previousSibling;
         if (prevID){
-            itemID.parentNode.insertBefore(itemID,prevID);
+            if (prevID!=btn_update)
+                itemID.parentNode.insertBefore(itemID,prevID);
         }
     }
     function MoveDown(item) {
+        const btn_update = document.getElementById('btn_update');
         const itemID = document.getElementById(item);
         const nextID = itemID.nextElementSibling;
         if (nextID){
-            itemID.parentNode.insertBefore(nextID,itemID);
+            if (nextID!=btn_update)
+                itemID.parentNode.insertBefore(nextID,itemID);
         }
     }    
 </script>
@@ -55,7 +59,7 @@
                     </div>  
                 </div>   
                 @endfor    
-                <button type='submit' class="box_btn t_b_r_l color_g" style="height: 40px;">更新</button>                  
+                <button id="btn_update" type='submit' class="box_btn t_b_r_l color_g" style="height: 40px;">更新</button>                  
             @else
                 <div class="content_nodata">
                     <p>無資料</p>

@@ -215,13 +215,15 @@ class HomeController extends Controller
             $img_path = null;
         }
 
-        $last_oder = Announcement::select('announcements.show_order')
+        $last_order = Announcement::select('announcements.show_order')
                                  ->where('status', 1)
                                  ->orderby('show_order','DESC')  
                                  ->first();        
-        $new_show_order = $last_oder['show_order']+1;
-
-        
+        if(!empty($last_order)){
+            $new_show_order = $last_order['show_order']+1;
+        }else{
+            $new_show_order = 1;
+        }        
             
         $announcement_id = Announcement::insertGetId([
             'title' => $data['title'], 
@@ -1417,13 +1419,17 @@ class HomeController extends Controller
     {
         $inputs = $request->all();    
         $inputs_count = count($inputs);    
-        $j = $inputs_count-1;       
+        $i = 0;
+        $j = $inputs_count-1;   
         foreach($inputs AS $input){
-            if($j!=0){         
-                Homepost::where('id', $input)
-                        ->update(['post_order' => $j ]);                
+            if($i!=0){
+                if($j!=0){         
+                    Homepost::where('id', $input)
+                            ->update(['post_order' => $j ]);                
+                }
+                $j--;
             }
-            $j--;
+            $i++;
         }
         Homepost::whereNot('status', 1)
                 ->update(['post_order' => 0 ]);    

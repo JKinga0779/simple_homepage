@@ -56,7 +56,7 @@
                             <a href="{{ route('news_detail', ['id' => $now_newspost['id'] ] ) }}">
                                 <div class="news_select">
                                     <div>
-                                        <p>{{$now_newspost['create_date']}}</p>
+                                        <p>{{$now_newspost['created_date']}}</p>
                                         <p>{{$now_newspost['title']}}</p>
                                     </div>
                                     @switch($now_newspost['type'])
@@ -78,8 +78,8 @@
                         </li>
                     @endforeach
                 @else
-                <div class="no_date">
-                    <p>無資料</p>
+                <div class="no_date" style="height: 200px;">
+                    <h1>無資料</h1>
                 </div>
                 @endif                                
 
